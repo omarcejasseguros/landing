@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OC Seguros - Tu Tranquilidad es Prioridad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-oc {
+            background: linear-gradient(45deg, #1e40af, #d97706);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .company-logos {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            padding: 5px 10px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #1e40af;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 64, 175, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #fbbf24);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: #e0f2fe;
+        }
+
+        .insurance-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-label {
+            font-weight: 500;
+            color: #e0f2fe;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #1e40af, #d97706);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .highlight-message {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .highlight-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #4b5563;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .values-section {
+            background: #f8fafc;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .values-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #1e40af;
+        }
+
+        .values-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .value-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .value-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #1e40af, #d97706);
+            border-radius: 15px;
+            z-index: -1;
+            padding: 2px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .value-text {
+            font-weight: 600;
+            color: #1e40af;
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp CTA */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .whatsapp-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: #25d366;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: #fbbf24;
+        }
+
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #fbbf24);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-contact {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #fbbf24;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .insurance-icons {
+                gap: 1.5rem;
+            }
+
+            .values-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-contact {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .insurance-icons {
+                gap: 1rem;
+            }
+
+            .icon-item {
+                min-width: 100px;
+                padding: 1rem;
+            }
+
+            .whatsapp-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <div class="logo-oc">OC</div>
+                    </div>
+                    <div class="company-logos">
+                        <span class="company-logo">Federación Patronal Seguros SA</span>
+                        <span class="company-logo">Seguros Rivadavia</span>
+                    </div>
+                </div>
+                <div class="contact-header">
+                    <a href="tel:1132155187" class="contact-item">
+                        📞 1132155187
+                    </a>
+                    <a href="mailto:OCseguros@gmail.com" class="contact-item">
+                        ✉️ OCseguros@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">OC SEGUROS</h1>
+                <p class="hero-subtitle">Donde tu tranquilidad es prioridad</p>
+                
+                <div class="insurance-icons">
+                    <div class="icon-item">
+                        <div class="icon">🏠</div>
+                        <span class="icon-label">Hogar</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">🚗</div>
+                        <span class="icon-label">Auto</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">✈️</div>
+                        <span class="icon-label">Viajes</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">👥</div>
+                        <span class="icon-label">Vida</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">🏥</div>
+                        <span class="icon-label">Salud</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">💼</div>
+                        <span class="icon-label">Trabajo</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">🛵</div>
+                        <span class="icon-label">Moto</span>
+                    </div>
+                    <div class="icon-item">
+                        <div class="icon">🐾</div>
+                        <span class="icon-label">Mascotas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-section">
+                <h2 class="section-title">Tu Protección, Nuestra Prioridad</h2>
+                
+                <div class="highlight-message">
+                    <p class="highlight-text">El seguro no se usa todos los días... pero el día que lo necesitás, te salva</p>
+                </div>
+
+                <p class="description-text">
+                    Muchas personas creen que un seguro es un gasto innecesario... hasta que algo pasa.
+                </p>
+
+                <p class="description-text">
+                    Asegurá tu auto, tu hogar o tu vida con una cobertura que te respalde cuando más lo necesitás.
+                </p>
+
+                <div class="values-section">
+                    <h3 class="values-title">¿Por qué elegir OC Seguros?</h3>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-text">Confianza</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-text">Experiencia</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-text">Acompañamiento Real</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-message">
+                    <p class="highlight-text">Productor y Asesor de Seguros</p>
+                    <p>Con años de experiencia en el mercado asegurador, te brindamos las mejores opciones para proteger lo que más valorás.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- WhatsApp CTA -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="whatsapp-content">
+                <h2 class="whatsapp-title">¿Necesitás una cotización?</h2>
+                <p class="whatsapp-subtitle">Contactanos ahora y obtené tu seguro en minutos</p>
+                <a href="https://wa.me/5491132155187?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20seguros" 
+                   class="whatsapp-btn" target="_blank">
+                    <div class="whatsapp-icon">📱</div>
+                    Chatear por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">OC SEGUROS</div>
+                <div class="footer-contact">
+                    <a href="tel:1132155187">📞 1132155187</a>
+                    <a href="mailto:OCseguros@gmail.com">✉️ OCseguros@gmail.com</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; color: #94a3b8;">
+                <p>&copy; 2024 OC Seguros. Donde tu tranquilidad es prioridad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.icon-item, .value-item, .highlight-message').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // WhatsApp button hover effect
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('mouseenter', function() {
+                this.style.background = 'linear-gradient(45deg, #ffffff, #fbbf24)';
+                this.style.color = '#25d366';
+            });
+
+            whatsappBtn.addEventListener('mouseleave', function() {
+                this.style.background = 'white';
+                this.style.color = '#25d366';
+            });
+        }
+
+        // Add floating animation to insurance icons
+        document.querySelectorAll('.icon-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.2}s`;
+            item.style.animation = 'float 3s ease-in-out infinite';
+        });
+
+        // Add CSS animation for floating effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
